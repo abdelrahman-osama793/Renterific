@@ -4,3 +4,13 @@
 .product-row{
     margin-bottom: 20px;
 }
+
+.dropdown-menu{
+    height: 40px;
+}
+.navbar-item{
+    margin-top: -25px;
+}
+.styDrop{
+    background-color: whitesmoke;
+}
