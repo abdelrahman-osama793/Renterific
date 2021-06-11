@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-auto bg-light sticky-top">
+            <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+                <a href="/" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+                    <i class="bi-bootstrap fs-1"></i>
+                </a>
+                <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+                    <li class="nav-item tablink active" onclick="eve(event,'tag1')">
+                        <a  class="nav-link py-3 px-2" id="defaultOpen" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                            <i class="bi-house fs-3"></i>
+                        </a>
+                    </li>
+                    <li class="tablink active"   onclick="eve(event,'tag2')">
+                        <a class="nav-link py-3 px-2"  title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                            <i class="bi bi-plus-square fs-3"></i>
+                        </a>
+                    </li>
+                    <li class="tablink active"  onclick="eve(event,'tag3')" >
+                        <a class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                            <i class="bi bi-bag fs-3"></i>
+                        </a>
+                    </li>
+                    <li class="tablink active"  onclick="eve(event,'tag4')" >
+                        <a class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Products">
+                            <i class="bi bi-bell fs-3"></i>
+                        </a>
+                    </li>
+                    <li class="tablink active"  onclick="eve(event,'tag5')" >
+                        <a class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Products">
+                            <i class="bi bi-pencil-square fs-3"></i>
+                        </a>
+                    </li>
+                    <li class="tablink active"  onclick="eve(event,'tag6')" >
+                        <a  class="nav-link px-2 last-icon" title="" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-bs-original-title="Products">
+                            <i class="bi bi-box-arrow-right fs-3"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="tag1" class="col-sm p-3 min-vh-100 tabcontent">
+           <h1>home</h1>
+        </div>
+        <div id="tag2" class="col-sm p-3 min-vh-100 tabcontent">
+            <div class="container">
+                <form>
+                  <h2>Add New Product</h2>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="first">Product Name</label>
+                        <input type="text" class="form-control" id="first">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="last">Product Type</label>
+                        <input type="text" class="form-control" id="last">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="company">Product Price</label>
+                        <input type="text" class="form-control" id="company">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Duration">Product Duration</label>
+                        <input type="tel" class="form-control" id="Duration">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Image">Product Image</label>
+                        <input type="file" class="form-control" id="Image">
+                      </div>
+                    </div>
+                  </div>
+                  <button  type="submit" class="btn btn-lg btn-primary mt-5" style="margin-left: 38rem;">Book</button>
+                </form>
+              </div>
+         </div>
+         <div id="tag3" class="col-sm p-3 min-vh-100 tabcontent">
+            <h1>my product</h1>
+         </div>
+         <div id="tag4" class="col-sm p-3 min-vh-100 tabcontent">
+            <h1>notification</h1>
+         </div>
+         <div id="tag5" class="col-sm p-3 min-vh-100 tabcontent">
+            <h1>Update Acco</h1>
+         </div>
+    </div>
+</div>
