@@ -1,0 +1,390 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-auto bg-light sticky-top">
+      <div
+        class="
+          d-flex
+          flex-sm-column flex-row flex-nowrap
+          bg-light
+          align-items-center
+          sticky-top
+        "
+      >
+        <a
+          href="/"
+          class="d-block p-3 link-dark text-decoration-none"
+          title=""
+          data-bs-toggle="tooltip"
+          data-bs-placement="right"
+          data-bs-original-title="Icon-only"
+        >
+          <i class="bi-bootstrap fs-1"></i>
+        </a>
+        <ul
+          class="
+            nav nav-pills nav-flush
+            flex-sm-column flex-row flex-nowrap
+            mb-auto
+            mx-auto
+            text-center
+            align-items-center
+          "
+        >
+          <li class="nav-item tablink active" onclick="eve(event,'tag1')">
+            <a
+              class="nav-link py-3 px-2"
+              id="defaultOpen"
+              title=""
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-original-title="Home"
+            >
+              <i class="bi-house fs-3"></i>
+            </a>
+          </li>
+          <li class="tablink active" onclick="eve(event,'tag2')">
+            <a
+              class="nav-link py-3 px-2"
+              title=""
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-original-title="Dashboard"
+            >
+              <i class="bi bi-plus-square fs-3"></i>
+            </a>
+          </li>
+          <li class="tablink active" onclick="eve(event,'tag3')">
+            <a
+              class="nav-link py-3 px-2"
+              title=""
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-original-title="Orders"
+            >
+              <i class="bi bi-bag fs-3"></i>
+            </a>
+          </li>
+          <li class="tablink active" onclick="eve(event,'tag4')">
+            <a
+              class="nav-link py-3 px-2"
+              title=""
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-original-title="Products"
+            >
+              <i class="bi bi-bell fs-3"></i>
+            </a>
+          </li>
+          <li class="tablink active" onclick="eve(event,'tag5')">
+            <a
+              class="nav-link py-3 px-2"
+              title=""
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-original-title="Products"
+            >
+              <i class="bi bi-pencil-square fs-3"></i>
+            </a>
+          </li>
+          <li class="tablink active" onclick="eve(event,'tag6')">
+            <a
+              class="nav-link px-2 last-icon"
+              title=""
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-original-title="Products"
+            >
+              <i class="bi bi-box-arrow-right fs-3"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="tag1" class="col-sm p-3 min-vh-100 tabcontent">
+      <!-- This is Profile section -->
+      <div class="container-fluid">
+        <div class="profile-header">
+          <div class="profile-img">
+            <img src="../../../../../assets/story1.jpg" alt="Profile Image" />
+          </div>
+          <div class="profile-nav-info">
+            <h3 class="user-name">Bright Code</h3>
+            <div class="address">
+              <p id="state" class="state">New York,</p>
+              <span id="country" class="country">USA.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-bd">
+          <div class="left-side">
+            <div class="profile-side">
+              <p class="mobile-no">
+                <i class="fa fa-phone"></i> +23470xxxxx700
+              </p>
+              <p class="user-mail">
+                <i class="fa fa-envelope"></i> Brightisaac80@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="tag2" class="col-sm p-3 min-vh-100 tabcontent">
+      <div class="container">
+        <form>
+          <!-- Add new product section -->
+          <h2>Add New Product</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="first">Product Name</label>
+                <input type="text" class="form-control" id="first" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="last">Product Type</label>
+                <input type="text" class="form-control" id="last" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="company">Product Price</label>
+                <input type="text" class="form-control" id="company" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Duration">Product Duration</label>
+                <input type="tel" class="form-control" id="Duration" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Image">Product Image</label>
+                <input type="file" class="form-control" id="Image" />
+              </div>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-lg btn-primary mt-5"
+            style="margin-left: 38rem"
+          >
+            Book
+          </button>
+        </form>
+      </div>
+    </div>
+    <div id="tag3" class="col-sm p-3 min-vh-100 tabcontent">
+      <!-- my products section> -->
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col-2">ID</th>
+              <th scope="col-2">Name</th>
+              <th scope="col-2">Price</th>
+              <th scope="col-2">Duration</th>
+              <th scope="col-2">Image</th>
+              <th scope="col-2">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>3 days</td>
+              <td>
+                <img
+                  class="img-thumbnail"
+                  width="90px"
+                  src="../../../../../assets/story1.jpg"
+                />
+              </td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>3 days</td>
+              <td>
+                <img
+                  class="img-thumbnail"
+                  width="90px"
+                  src="../../../../../assets/story1.jpg"
+                />
+              </td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>3 days</td>
+              <td>
+                <img
+                  class="img-thumbnail"
+                  width="90px"
+                  src="../../../../../assets/story1.jpg"
+                />
+              </td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>3 days</td>
+              <td>
+                <img
+                  class="img-thumbnail"
+                  width="90px"
+                  src="../../../../../assets/story1.jpg"
+                />
+              </td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>3 days</td>
+              <td>
+                <img
+                  class="img-thumbnail"
+                  width="90px"
+                  src="../../../../../assets/story1.jpg"
+                />
+              </td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="tag4" class="col-sm p-3 min-vh-100 tabcontent">
+      <!-- Notifications section -->
+      <h1>Notification</h1>
+      <div class="list-group">
+        <a
+          href="#"
+          class="
+            list-group-item list-group-item-action
+            flex-column
+            align-items-start
+            active
+          "
+        >
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small>3 days ago</small>
+          </div>
+          <p class="mb-1">
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+            eget risus varius blandit.
+          </p>
+          <small>Donec id elit non mi porta.</small>
+        </a>
+        <a
+          href="#"
+          class="
+            list-group-item list-group-item-action
+            flex-column
+            align-items-start
+          "
+        >
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1">
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+            eget risus varius blandit.
+          </p>
+          <small class="text-muted">Donec id elit non mi porta.</small>
+        </a>
+        <a
+          href="#"
+          class="
+            list-group-item list-group-item-action
+            flex-column
+            align-items-start
+          "
+        >
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1">
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+            eget risus varius blandit.
+          </p>
+          <small class="text-muted">Donec id elit non mi porta.</small>
+        </a>
+      </div>
+    </div>
+    <div id="tag5" class="col-sm p-3 min-vh-100 tabcontent">
+      <!-- Update Section -->
+      <h1>Update Account</h1>
+      <div class="container my-5">
+        <form>
+          <!-- Edit information section -->
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="first">Address</label>
+                <input type="text" class="form-control" id="first" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="last">Email</label>
+                <input type="text" class="form-control" id="last" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="company">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  value="123456"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Duration">New Password</label>
+                <input type="password" class="form-control" id="password" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Image">Image</label>
+                <input type="file" class="form-control" id="Image" />
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-lg btn-primary mt-5">
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
