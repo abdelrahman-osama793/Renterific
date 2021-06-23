@@ -288,11 +288,6 @@ body {
 }
 
 @media (max-width: 400px) {
-  body {
-    margin: ;
-  }
-
-  .profile-header h3 {}
 
   .profile-option {
     width: 30px;
