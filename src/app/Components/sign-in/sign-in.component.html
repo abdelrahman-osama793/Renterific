@@ -1,0 +1,71 @@
+<section class="vh-100 main-section">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 border border rounded p-5">
+        <form  [formGroup]='loginForm'   (ngSubmit)='submitLoginForm(loginForm)' >
+          <p
+          class="small fw-bold mt-2 pt-1 mb-0 mb-3 d-flex flex-row align-items-center justify-content-center"
+          >
+          Don't Have An Account ?
+          <a
+          class="link-info ml-2"
+          routerLink='/sign-up'>
+            Sign Up
+          </a>
+          </p>
+
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <div *ngIf='error' class="alert  alert-danger">
+              <p>{{error}}</p>
+          </div>
+            <label class="form-label" for="form3Example3">E-mail Address<span class="text-danger">*</span></label>
+            <input formControlName='Email' type="email" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" />
+              <div *ngIf="loginForm.get('Email')?.errors!=null && loginForm.get('Email')?.touched" class="alert alert-danger mt-2">
+                <p *ngIf="loginForm.get('Email')?.errors?.required">Email is required *</p>
+                <p *ngIf="loginForm.get('Email')?.errors?.email">Email Not Valid</p>
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <label class="form-label" for="form3Example4">Password<span class="text-danger">*</span></label>
+            <input formControlName='Password' type="password" id="form3Example4" class="form-control form-control-lg"
+              placeholder="Enter password" />
+              <div *ngIf="loginForm.get('Password')?.errors!=null && loginForm.get('Password')?.touched" class="alert alert-danger mt-2">
+                <p *ngIf="loginForm.get('Password')?.errors?.required">Password is required</p>
+                <p *ngIf="loginForm.get('Password')?.errors?.pattern">Password must start with uppercase * </p>
+            </div>
+          </div>
+
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
+            </div>
+            <a href="#!" class="text-body text-danger text-decoration-underline">Forgot password?!</a>
+          </div>
+
+
+          <div class="text-center text-lg-start mt-4 pt-2 d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-primary btn-lg w-100"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Go On<i class="fa fa-rocket-launch mx-4"></i></button>
+          </div>
+
+        </form>
+      </div>
+      <div class="col-md-9 col-lg-6 col-xl-5 loginImg">
+        <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+          alt="Sample image">
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,86 @@
+<div class="container main">
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 personal p-4">
+          <div class=" text-center pb-4">
+            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="profile"
+              class="rounded-circle mb-3 image" />
+            <div class="mb-3">
+              <h4 class="d-flex justify-content-center border-bottom pb-4">
+                <span>{{ name }}</span>
+                <div class="text-center mx-2">
+                  <button routerLink='editProfile'>
+                    <i class="bi bi-pencil-square edit"></i>
+                  </button>
+                </div>
+              </h4>
+              <div class=" align-items-center justify-content-center py-4">
+                <div class="d-flex mx-2">
+                  <i class="bi bi-geo-alt-fill mr-2"></i>
+                  <h6 class="mr-1 text-black-50">from </h6>
+                  <h6 class="font-weight-bolder">{{ city }}, {{ street }}</h6>
+                </div>
+                <div class="d-flex mx-2">
+                  <i class="bi bi-envelope-fill mr-2"></i>
+                  <h6 class="mr-1 text-black-50">e-mail </h6>
+                  <h6 class="font-weight-bolder">{{ email }}</h6>
+                </div>
+                <div class="d-flex mx-2">
+                  <i class="bi bi-telephone-outbound-fill mr-2"></i>
+                  <h6 class="mr-1 text-black-50">call me </h6>
+                  <h6 class="font-weight-bolder">{{ phone }}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <!-- nav bar -->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink='myProducts' routerLinkActive="active">
+                      <i class="fad fa-layer-group mx-1"></i>
+                      Products
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink='addNewProduct' routerLinkActive="active">
+                      <i class="fad fa-layer-plus mx-1"></i>
+                      Add Product
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink='seller-notify'>
+                      <i class="fas fa-bell-exclamation mx-1"></i>
+                      Seller Notification
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink='buyer-notify'>
+                      <i class="fas fa-bell-exclamation mx-1"></i>
+                      Buyer Notification
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <!-- inner content -->
+          <div class="Content">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="container border rounded mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-12 col-xl-12 mx-auto">
+      <div class="my-4">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-12 col-xl-6 col-lg-6">
+              <label for="fullname">Full Name</label>
+              <input formControlName='Name' type="text" #fullname id="fullname" class="form-control" value="{{ name }}" />
+              <div *ngIf="EditProfileForm.get('Name')?.errors!=null && EditProfileForm.get('Name')?.touched" class="alert alert-danger mt-2">
+                <p *ngIf="EditProfileForm.get('Name')?.errors?.required">firs_name is required</p>
+                <p *ngIf="EditProfileForm.get('Name')?.errors?.minlength">firs_name is minLength 3</p>
+                <p *ngIf="EditProfileForm.get('Name')?.errors?.maxlength">firs_name is maxLength 10 </p>
+            </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputNumber">Phone Number</label>
+            <input formControlName='Phone' type="Number" #phonenumber class="form-control" id="inputNumber" value="{{ phone }}" />
+            <div *ngIf="EditProfileForm.get('Phone')?.errors!=null && EditProfileForm.get('Phone')?.touched" class="alert alert-danger mt-2">
+              <p *ngIf="EditProfileForm.get('Phone')?.errors?.required">Phone is required</p>
+              <p *ngIf="EditProfileForm.get('Phone')?.errors?.pattern">Phone invalid </p>
+             
+      
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input formControlName="Email" type="email" #emailuser class="form-control" id="inputEmail" value="{{ email }}" />
+            <div *ngIf="EditProfileForm.get('Email')?.errors!=null && EditProfileForm.get('Email')?.touched" class="alert alert-danger mt-2">
+              <p *ngIf="EditProfileForm.get('Email')?.errors?.required">email is required</p>
+              <p *ngIf="EditProfileForm.get('Email')?.errors?.email">email not valid</p>
+              
+      
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-xl-6 col-lg-6 col-md-12">
+              <label for="inputAddress5">Street</label>
+              <input formControlName='Address_street' type="text" #streetuser class="form-control" id="inputAddress5" value="{{ street }}" />
+              <div *ngIf="EditProfileForm.get('Address_street')?.errors!=null && EditProfileForm.get('Address_street')?.touched" class="alert alert-danger mt-2">
+                <p *ngIf="EditProfileForm.get('Address_street')?.errors?.required">Address_street is required</p>
+                <p *ngIf="EditProfileForm.get('Address_street')?.errors?.minlength">Address_street is minLength 10</p>
+                <p *ngIf="EditProfileForm.get('Address_street')?.errors?.maxlength">Address_street is maxLength 40 </p>
+          </div>
+            </div>
+            <div class="form-group col-xl-6 col-lg-6 col-md-12">
+              <label for="inputCompany5">City</label>
+              <input formControlName='Address_city' type="text" #cityuser class="form-control" id="inputCompany5" value="{{ city }}" />
+              <div *ngIf="EditProfileForm.get('Address_city')?.errors!=null && EditProfileForm.get('Address_city')?.touched" class="alert alert-danger mt-2">
+                <p *ngIf="EditProfileForm.get('Address_city')?.errors?.required">Address_city is required</p></div>
+            </div>
+            
+          </div>
+          <hr class="my-4" />
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputPassword5">New Password</label>
+                <input formControlName='Password' type="password" #passworduser class="form-control" id="inputPassword5" />
+                <div *ngIf="EditProfileForm.get('Password')?.errors!=null && EditProfileForm.get('Password')?.touched" class="alert alert-danger mt-2">
+                  <p *ngIf="EditProfileForm.get('Password')?.errors?.required">password is required</p>
+                  <p *ngIf="EditProfileForm.get('Password')?.errors?.pattern">password must start with uppercase and minlength 3 chars and max is 8 chars </p>
+              </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark text-center" style="margin-left: 300px;" (click)="editprofile(fullname.value,phonenumber.value,emailuser.value,streetuser.value,cityuser.value,passworduser.value)">Update Password</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

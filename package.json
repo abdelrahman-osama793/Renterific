@@ -20,9 +20,12 @@
     "@angular/router": "~12.0.1",
     "admin-lte": "^3.0.5",
     "angular-admin-lte": "^4.0.0",
+    "bcryptjs": "^2.4.3",
     "bootstrap": "^5.0.1",
     "bootstrap-icons": "^1.5.0",
+    "jwt-decode": "^3.1.2",
     "rxjs": "~6.6.0",
+    "stripe-angular": "^1.7.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

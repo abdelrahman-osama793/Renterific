@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6" style="margin-top: 80px !important;">
+        <h1 class="bg-dark text-white text-center ">Payment Details</h1>
+        <input class="form-control" #c_number type="text" placeholder="Enter your Card Number"><br>
+        <input class="form-control" #exp_number type="number" placeholder="Enter your exp month"><br>
+        <input class="form-control" #exp_year type="number" placeholder="Enter your exp year"><br>
+        <input class="form-control" #cvc type="text" placeholder="Enter your cvc"><br>
+        <input class="form-control" type="text" value="{{ price }}$" readonly><br>
+        <button (click)="buy(c_number.value,exp_number.value,exp_year.value,cvc.value)" class="btn btn-dark w-50" style="margin-left: 150px;">Buy</button>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+</body>
+</html>

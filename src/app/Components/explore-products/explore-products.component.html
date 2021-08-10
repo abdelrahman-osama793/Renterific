@@ -1,0 +1,84 @@
+<section class="works_section">
+  <div class="container">
+    <div class="main-heading">
+      <div class="row" style="margin-top:40px !important ;">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <select #cat_select class="form-control">
+            <option *ngFor="let c of all_category">{{ c.title }}</option>
+          </select>
+          <br>
+          <button class="btn text-white w-50" style="background-color: black;"
+            (click)="getCat(cat_select.options[cat_select.selectedIndex].text)">Search</button>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    <div class="row mt-50 works_content" *ngIf="flag==false && cat_select;else elseTemplate">
+      <div class="col-xl-3 col-lg-4 col-sm-6" *ngFor="let c of category">
+        <div class="category-card">
+          <div class="content-inner fl-wrap">
+            <div class="content-front">
+              <div class="cf-inner">
+                <div class="bg " style="background-image:url('http://localhost:3333/assets/images/products/{{ c.image }}')"></div>
+                <div class="overlay"></div>
+                <div class="inner">
+                  <div class="icon-sty">
+                    <i class="fa fa-home"></i>
+                  </div>
+                  <h4>{{ c.title }}</h4>
+                </div>
+              </div>
+            </div>
+            <div class="content-back">
+              <div class="cf-inner">
+                <div class="inner">
+                  <div class="dec-icon">
+                    <h4>{{ c.title }}</h4>
+                  </div>
+                  <p>{{ c.desc }}</p>
+                  <a [routerLink]='["/rental",c._id]' class="btn card-btn">Rent</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #elseTemplate>
+  <section class="row mt-50 works_content works_section">
+      <div class="col-xl-3 col-lg-4 col-sm-6" *ngFor="let p of product">
+        <div class="category-card">
+          <div class="content-inner fl-wrap">
+            <div class="content-front">
+              <div class="cf-inner">
+                <div class="bg" style="background-image:url('http://localhost:3333/assets/images/products/{{ p.image }}')"></div>
+                <div class="overlay"></div>
+                <div class="inner">
+                  <div class="icon-sty bg-dark">
+                    <i class="fa fa-home bg-dark"></i>
+                  </div>
+                  <h4>{{ p.title }}</h4>
+                </div>
+              </div>
+            </div>
+            <div class="content-back bg-dark">
+              <div class="cf-inner">
+                <div class="inner">
+                  <div class="dec-icon">
+                    <h4>{{ p.title }}</h4>
+                  </div>
+                  <p>{{ p.desc }}</p>
+                  <h1>{{ p.price_by_day }}$</h1>
+                  <a [routerLink]='["/rental",p._id]' class="btn card-btn bg-white text-dark">Rent</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+</ng-template>

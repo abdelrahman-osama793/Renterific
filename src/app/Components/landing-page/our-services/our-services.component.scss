@@ -1,0 +1,51 @@
+
+.service-items{
+   height: auto !important;
+
+}
+.service-item{
+   padding: 30px 0;
+   text-align: center;
+
+}
+.service-item i{
+   color: #ff305b;
+   display: block;
+   font-size: 36px;
+   margin-bottom: 20px;
+   transition: transform .6s;
+}
+.service-item h3{
+   font-family: 'Source Sans Pro', sans-serif;
+   color: #333;
+   line-height: 1.2;
+
+}
+.service-item p{
+   color: #555555;
+   margin-top: 20px;
+   padding-bottom: 20px;
+   font-family: "Roboto",sans-serif;
+   line-height: 25px;
+
+}
+.service-item:hover{
+   background: #fff !important;
+
+}
+.service-item:hover  i{
+   transform: scale(1.2);
+}
+
+
+#services{
+   width: 100%;
+  
+   height: auto;
+}
+.ddd{
+   background-color: whitesmoke !important;
+}
+.parent-service{
+   padding-left: 60px;
+}

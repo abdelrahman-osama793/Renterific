@@ -1,0 +1,32 @@
+<section class="vh-100" style="margin-top: 75px;">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 border border rounded p-5">
+        <label>Product Name : </label>
+          <input class="form-control" type="text" #pro_title value="{{ product.title }}" readonly><br>
+          <label>Product Description : </label>
+          <textarea class="border border-dark" #pro_desc rows="2" cols="55" readonly>
+                {{ product.desc }}
+                </textarea>
+            <label>Product Price : </label>
+          <input class="form-control" type="text" #price_by_day  value="{{ product.price_by_day }}" readonly><br>
+          <label>Product Starting Date : </label>
+          <input class="form-control" type="date" #start_data><br>
+          <label>Product Number of Days : </label>
+          <input class="form-control" type="number" #numberOfDay [(ngModel)]="num_days" placeholder="Enter Times of days"><br>
+          <label>Product Postion Receiving : </label>
+          <input class="form-control" type="text" #postionOfReceiving placeholder="Enter Postion of Receving " value=""><br>
+          <input class="form-control" type="hidden" #seller_id value="{{ product.user }}"><br>
+          <input class="form-control" type="hidden" #buyer_data value="{{ buyer_id }}"><br>
+          <input class="form-control" type="hidden" #product_id value="{{ product._id }}"><br>
+          <button class="btn btn-dark w-25" style="margin-left: 120px;" 
+      (click)="rentalFun(pro_title.value,pro_desc.value,price_by_day.value,start_data.value,numberOfDay.value,postionOfReceiving.value,seller_id.value,buyer_data.value,oper_Total_Payment.innerText,product_id.value)">
+            Rent</button>
+      </div>
+      <div  class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 border border rounded p-5 alert alert-dark">
+          <img class="w-100 h-50" src="http://localhost:3333/assets/images/products/{{ product.image }}">
+           <h2 class="text-center">Total Payment :  <span class="text-danger" #oper_Total_Payment >{{ num_days * price_day}}</span>$</h2>
+      </div>
+    </div>
+  </div>
+</section>

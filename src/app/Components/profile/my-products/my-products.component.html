@@ -1,0 +1,43 @@
+<div class="products-feed pt-5">
+
+  <div class="d-column align-items-start products-feed-item">
+    <div class="d-flex m-3">
+      <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="profile" class="img-sm rounded-circle mr-4">
+      <div class="d-flex align-items-center">
+        <h6 class="mr-4">
+          User Name : {{ name }}
+        </h6>
+      </div>
+    </div>
+    <div class="container">
+      <div class="d-flex justify-content-center row">
+        <div class="col-md-12" *ngFor="let p of product">
+          <div class="row p-2 bg-white border rounded mt-2">
+            <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
+                src="http://localhost:3333/assets/images/products/{{ p.image }}"></div>
+            <div class="col-md-6 mt-1">
+              <h2 class="text-center">{{ p.title }}</h2>
+              <div class="d-flex flex-row">
+                <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                    class="fa fa-star"></i><i class="fa fa-star"></i></div><span> </span>
+              </div>
+              <p class="text-justify para mb-0 text-center">{{ p.desc }}<br><br></p>
+            </div>
+            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+              <div class="d-flex flex-row align-items-center">
+                <h4 class="mr-1">${{ p.price_by_day }}</h4>
+              </div>
+              <h6 class="text-success">Price Per Day</h6>
+              <input #id value="{{ p._id }}" type="hidden" />
+              <div class="d-flex flex-column mt-4"><button class="btn btn-outline-dark btn-sm"
+                  routerLink='editProduct/{{ p._id }}' type="button">EditProduct</button>
+                <button class="btn btn-outline-danger btn-sm mt-2" (click)="DeleteProduct(id.value)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

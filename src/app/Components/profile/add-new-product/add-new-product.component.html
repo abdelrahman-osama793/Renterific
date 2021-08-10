@@ -1,0 +1,79 @@
+<div class="container tm-mt-big tm-mb-big">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mx-auto">
+      <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="tm-block-title d-inline-block">Add Product</h2>
+          </div>
+        </div>
+        <div class="row tm-edit-product-row">
+          <form  [formGroup]='addProductForm'>
+
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="form-group mb-3">
+                  <label for="name">Product Name
+                  </label>
+                  <input id="name" #title name="name" type="text" class="form-control "  formControlName='Name' />
+                  <div *ngIf="addProductForm.get('Name')?.errors!=null && addProductForm.get('Name')?.touched" class="alert alert-danger mt-2">
+                    <p *ngIf="addProductForm.get('Name')?.errors?.required">Name Product is required</p>
+                    <p *ngIf="addProductForm.get('Name')?.errors?.minlength">Name Product is minLength 3</p>
+                    <p *ngIf="addProductForm.get('Name')?.errors?.maxlength">Name Product is maxLength 10 </p>
+                </div>
+                 
+                </div>
+                <div class="form-group mb-3">
+                  <label for="description">Description</label>
+                  <textarea #desc class="form-control validate" rows="3"  formControlName='Desc'></textarea>
+                  <div *ngIf="addProductForm.get('Desc')?.errors!=null && addProductForm.get('Desc')?.touched" class="alert alert-danger mt-2">
+                    <p *ngIf="addProductForm.get('Desc')?.errors?.required">Desc Product is required</p>
+                    <p *ngIf="addProductForm.get('Desc')?.errors?.minlength">Desc Product is minLength 10</p>
+                    <p *ngIf="addProductForm.get('Desc')?.errors?.maxlength">Desc Product is maxLength 70 </p>
+                </div>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="category">Category</label>
+                  <select #cat_select class="form-control" id="category"  formControlName='Category'>
+                    <option class="form-control" *ngFor="let cat of category" value="{{ cat._title }}">{{ cat.title }}</option>
+                  </select>
+                  <div *ngIf="addProductForm.get('Category')?.errors!=null && addProductForm.get('Category')?.touched" class="alert alert-danger mt-2">
+                    <p *ngIf="addProductForm.get('Category')?.errors?.required">Category Product is required</p>
+                   
+                </div>
+
+                </div>
+                <div class="row">
+                  <div class="form-group mb-3 col-xs-12 col-sm-6 w-100">
+                    <label for="price-per-day">Price Per Day
+                    </label>
+                    <input id="price-per-day" name="price-per-day" #price type="number" class="form-control validate mt-2" formControlName='Price' />
+                    <div *ngIf="addProductForm.get('Price')?.errors!=null && addProductForm.get('Price')?.touched" class="alert alert-danger mt-2">
+                      <p *ngIf="addProductForm.get('Price')?.errors?.required">Price Product is required</p>
+                      <p *ngIf="addProductForm.get('Price')?.errors?.minlength">Price Product is min 5$</p>
+                      <p *ngIf="addProductForm.get('Price')?.errors?.maxlength">Price Product is max 500$ </p>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="col-xl-12 col-lg-12 col-md-12">
+                <input type="file" #img class="form-control" formControlName="Img">
+                <div *ngIf="addProductForm.get('Img')?.errors!=null && addProductForm.get('Img')?.touched" class="alert alert-danger mt-2">
+                  <p *ngIf="addProductForm.get('Img')?.errors?.required">Image Product is required</p>
+                 
+              </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <button type="button" (click)="AddProduct(title.value,desc.value,price.value,cat_select.options[cat_select.selectedIndex].text,img.files)" class="btn btn-dark btn-block text-uppercase w-50 text-center" style="margin: auto 200px">Add Product Now</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

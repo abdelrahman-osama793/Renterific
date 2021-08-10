@@ -1,0 +1,144 @@
+<section class="100vh" style="margin-top:10%">
+  <div class="container h-100">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-xl-7 col-lg-10 col-md-11">
+        <div class="card shadow-2-strong card-registration mb-5" style="border-radius: 10px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);">
+          <div class="card-body p-4 p-md-5">
+            <p class="text-center h1 fw-bold mb-5 mx-md-4">Sign up</p>
+            <form [formGroup]='registerForm' (ngSubmit)='submitRegisterForm(registerForm)'>
+              <div class="row">
+                <h5 class="pb-3 text-black-50">
+                  <i class="fal fa-person-sign mr-2"></i>Personal Information
+                </h5>
+                <div class="col-md-12 mb-4">
+                  <div class="form-outline">
+                    <input formControlName='Name' type="text" id="firstName" class="form-control form-control-lg"
+                      placeholder="Full Name" />
+                    <div *ngIf="registerForm.get('Name')?.errors!=null && registerForm.get('Name')?.touched"
+                      class="alert alert-danger mt-2">
+                      <p *ngIf="registerForm.get('Name')?.errors?.required">
+                        Name is required<span class="text-danger">*</span>
+                      </p>
+                      <p *ngIf="registerForm.get('Name')?.errors?.minlength">
+                        MinLength is 3<span class="text-danger">*</span>
+                      </p>
+                      <p *ngIf="registerForm.get('Name')?.errors?.maxlength">
+                        MaxLength is 10<span class="text-danger">*</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input formControlName="Email" type="email" id="emailAddress" class="form-control form-control-lg"
+                      placeholder="Email Address" />
+                    <div *ngIf="registerForm.get('Email')?.errors!=null && registerForm.get('Email')?.touched"
+                      class="alert alert-danger mt-2">
+                      <p *ngIf="registerForm.get('Email')?.errors?.required">
+                        E-mail is required<span class="text-danger">*</span>
+                      </p>
+                      <p *ngIf="registerForm.get('Email')?.errors?.email">
+                        E-mail Invalid<span class="text-danger">*</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div class=" col-md-12 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input formControlName='Password' type="tel" id="password" class="form-control form-control-lg"
+                      placeholder="Password" />
+                    <div *ngIf="registerForm.get('Password')?.errors!=null && registerForm.get('Password')?.touched"
+                      class="alert alert-danger mt-2">
+                      <p *ngIf="registerForm.get('Password')?.errors?.required">
+                        Password is required<span class="text-danger">*</span>
+                      </p>
+                      <p *ngIf="registerForm.get('Password')?.errors?.pattern">
+                        Password must start with Uppercase and
+                        minimum length 3 characters and maximum length is 8 characters<span class="text-danger">*</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input formControlName='Phone' type="tel" id="phoneNumber" class="form-control form-control-lg"
+                      placeholder="Phone Number" />
+                    <div *ngIf="registerForm.get('Phone')?.errors!=null && registerForm.get('Phone')?.touched"
+                      class="alert alert-danger mt-2">
+                      <p *ngIf="registerForm.get('Phone')?.errors?.required">
+                        Phone is required<span class="text-danger">*</span>
+                      </p>
+                      <p *ngIf="registerForm.get('Phone')?.errors?.pattern">
+                        Phone invalid<span class="text-danger">*</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <hr class="mb-3 mx-auto" style="height:2px; width:90%; border-width:0;  color:rgb(121, 117, 117)">
+                <div class="form-group">
+                  <h5 class="text-black-50 pb-2">
+                    <i class="fal fa-map-marker-alt mr-1"></i>
+                    Address
+                  </h5>
+                  <input formControlName='Address_street' type="text" name="Address_street"
+                    class="form-control form-control-lg" id="Address_street" placeholder="Street, City" />
+                  <div
+                    *ngIf="registerForm.get('Address_street')?.errors!=null && registerForm.get('Address_street')?.touched"
+                    class="alert alert-danger mt-2">
+                    <p *ngIf="registerForm.get('Address_street')?.errors?.required">
+                      This field is required<span class="text-danger">*</span>
+                    </p>
+                    <p *ngIf="registerForm.get('Address_street')?.errors?.minlength">
+                      This field is minimum length 10<span class="text-danger">*</span>
+                    </p>
+                    <p *ngIf="registerForm.get('Address_street')?.errors?.maxlength">
+                      This field is maximum length 40<span class="text-danger">*</span>
+                    </p>
+                  </div>
+
+                </div> 
+                <div class="form-floating mb-4">
+                  <label for="Address_street">Address_street</label>
+                    <input formControlName='Address_street' type="text" name="Address_street" class="form-control" id="Address_street" style="margin-top: 50px;" />
+                    <div *ngIf="registerForm.get('Address_street')?.errors!=null && registerForm.get('Address_street')?.touched" class="alert alert-danger mt-2">
+                      <p *ngIf="registerForm.get('Address_street')?.errors?.required">Address_street is required</p>
+                      <p *ngIf="registerForm.get('Address_street')?.errors?.minlength">Address_street is minLength 10</p>
+                      <p *ngIf="registerForm.get('Address_street')?.errors?.maxlength">Address_street is maxLength 40 </p>
+
+                </div>
+                <div class=" col-md-12 mb-4 pb-2 dropdown">
+                  <label for="Address_city" class="mx-2">Governorate</label>
+                  <select
+                    formControlName='Address_city'
+                    class="form-select form-control form-control-lg"
+                    id="Address_city">
+                    <option value="Menofia">Menoufia</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="Giza">Giza</option>
+                    <option value="Alex">Alexandria</option>
+                    <option value="Zagazig">Zagazig</option>
+                  </select>
+                  <div
+                    *ngIf="registerForm.get('Address_city')?.errors!=null && registerForm.get('Address_city')?.touched"
+                    class="alert alert-danger mt-2">
+                    <p *ngIf="registerForm.get('Address_city')?.errors?.required">
+                      Governorate is required<span class="text-danger">*</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 pt-2">
+                <button class="btn btn-primary btn-lg w-100" type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
